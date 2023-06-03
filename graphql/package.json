@@ -1,0 +1,38 @@
+{
+  "name": "paddle.intai.me",
+  "version": "1.0.0",
+  "description": "PaddleMap GraphQL",
+  "license": "MIT",
+  "homepage": "https://paddle.intai.me",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Intai/paddle-intai-me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Intai/paddle-intai-me/issues"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "dev": "nodemon ./index.mjs",
+    "test": "eslint .",
+    "heroku-postbuild": "npm prune --production",
+    "start": "pm2 start --no-daemon index.mjs"
+  },
+  "dependencies": {
+    "apollo-server-core": "^3.10.0",
+    "apollo-server-express": "^3.10.0",
+    "config": "^3.3.7",
+    "datasource-sql": "^2.0.1",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "pg": "^8.7.3",
+    "pm2": "^5.2.0",
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "nodemon": "^2.0.19"
+  }
+}

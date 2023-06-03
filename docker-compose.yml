@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    command: postgres -c stats_temp_directory=/tmp/pg_stat_tmp
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=development
+    volumes:
+      - ./postgres/pgdata:/var/lib/postgresql/data
+      - type: tmpfs
+        target: /tmp/pg_stat_tmp
+        tmpfs:
+          size: 268435456
+
+  nodejs:
+    depends_on:
+      - postgres
+    image: paddle/nodejs
+    build:
+      context: ./nodejs
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: development
+        APP_DOMAIN: http://localhost
+        PORT: 80
+    ports:
+      - 80:80
+    volumes:
+      - ./nodejs:/usr/src/app
+    command: npm run dev

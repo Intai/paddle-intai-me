@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="PaddleMap">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@PaddleMap">
+    <meta name="twitter:creator" content="@PaddleMap">
+    <meta name="twitter:title" content="PaddleMap - Places to paddle">
+    <meta name="twitter:description" content="Kayaking, Canoe and SUP routes and launches.">
+    <meta name="twitter:image" content="<%= CONFIG.imagesUri %>/logo.webp">
+    <meta property="og:title" content="PaddleMap - Places to paddle">
+    <meta property="og:image" content="<%= CONFIG.imagesUri %>/logo.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= CONFIG.staticUri %>/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= CONFIG.staticUri %>/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= CONFIG.staticUri %>/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<%= CONFIG.staticUri %>/favicon/site.webmanifest">
+    <meta name="description" content="Kayaking, Canoe and SUP routes and launches." />
+    <meta name="keywords" content="Kayak,Canoe,SUP,Paddle,Map" />
+    <title>PaddleMap - Places to paddle</title>
+    <%= htmlWebpackPlugin.options.head %>
+  </head>
+  <body>
+    <style type="text/css">
+      body {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        touch-callout: none;
+        user-select: text;
+        margin: 0;
+        padding: 0;
+        background: #202124;
+      }
+      h2, h3, h4, h5, h6 {
+        font-weight: inherit;
+        font-size: inherit;
+        margin: inherit;
+        display: inherit;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      input {
+        -webkit-tap-highlight-color: rgba(242,242,242,0.1);
+      }
+      a:link,
+      a:active,
+      a:visited {
+        color: inherit;
+      }
+    </style>
+
+    <%= htmlWebpackPlugin.options.portal %>
+    <div id="app"><%= htmlWebpackPlugin.options.app %></div>
+
+    <% htmlWebpackPlugin.options.files.css.forEach(function(href) { %>
+      <link href="<%= href %>" rel="stylesheet">
+    <% }) %>
+    <% htmlWebpackPlugin.options.files.js.forEach(function(src) { %>
+      <script src="<%= src %>"></script>
+    <% }) %>
+  </body>
+</html>

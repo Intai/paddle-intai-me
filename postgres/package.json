@@ -1,0 +1,31 @@
+{
+  "name": "paddle.intai.me",
+  "version": "1.0.0",
+  "description": "PaddleMap Postgres",
+  "license": "MIT",
+  "homepage": "https://paddle.intai.me",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Intai/paddle-intai-me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Intai/paddle-intai-me/issues"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "migrate:up": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo"
+  },
+  "dependencies": {
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "ramda": "^0.28.0",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "sequelize-cli": "^6.4.1"
+  }
+}

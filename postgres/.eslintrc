@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "comma-dangle": ["off", "always-multiline"],
+    "indent": ["error", 2],
+    "quotes": ["error", "single"],
+    "semi": ["off", "never"],
+    "no-unused-vars": ["off", {
+      "argsIgnorePattern": "^_"
+    }],
+  }
+}
